@@ -21,7 +21,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
-    EditText Name, Password;
+    EditText FName, Password, LName, Email;
     String server_url = "http://192.168.50.4/DriverApp/new_user.php";
     AlertDialog.Builder builder;
 
@@ -29,26 +29,32 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button)findViewById(R.id.buttonSubmit);
-        Name = (EditText)findViewById(R.id.fName);
+        button = (Button)findViewById(R.id.bRegisterSubmit);
+        FName = (EditText)findViewById(R.id.fName);
+        LName = (EditText)findViewById(R.id.lName);
+        Email = (EditText)findViewById(R.id.email);
         Password = (EditText)findViewById(R.id.password);
         builder = new AlertDialog.Builder(MainActivity.this);
         button.setOnClickListener(new View.OnClickListener(){
            @Override
             public void onClick(View v){
-               final String name, password;
-                name = Name.getText().toString();
+               final String fName, lName, email, password;
+                fName = FName.getText().toString();
+                lName = LName.getText().toString();
+                email = Email.getText().toString();
                 password = Password.getText().toString();
                StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url,
                        new Response.Listener<String>(){
                            @Override
                            public void onResponse(String response){
                             builder.setTitle("Server Response");
-                               builder.setMessage("Response :"+response);
+                               builder.setMessage("Response : "+response);
                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
                                    @Override
                                    public void onClick(DialogInterface dialog, int which){
-                                       Name.setText("");
+                                       FName.setText("");
+                                       LName.setText("");
+                                       Email.setText("");
                                        Password.setText("");
                                    }
                                });
@@ -66,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
                    @Override
                    protected Map<String, String> getParams() throws AuthFailureError {
                         Map<String, String> params = new HashMap<String, String>();
-                        params.put("fName", name);
+                        params.put("fName", fName);
+                        params.put("lName", lName);
+                        params.put("email", email);
                         params.put("password", password);
                         return params;
                    }
