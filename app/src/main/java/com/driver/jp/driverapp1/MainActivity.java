@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                                alertDialog.show();
                            }
                        }
-               ,  new Response.ErrorListener() {
+               , new Response.ErrorListener() {
                    @Override
                    public void onErrorResponse(VolleyError error){
                        Toast.makeText(MainActivity.this, "I'm afraid I can't do that Dave.", Toast.LENGTH_SHORT).show();
