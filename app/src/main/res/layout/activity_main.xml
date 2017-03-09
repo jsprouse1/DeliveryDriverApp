@@ -11,76 +11,55 @@
     tools:context="com.driver.jp.driverapp1.MainActivity"
     android:background="#565656">
 
-    <EditText
+    <Button
+        android:text="Register New Driver"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="76dp"
+        android:id="@+id/bnRegisterPage"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:background="#464646"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/fName"
-        android:hint="First Name"
-        android:background="#999999"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/bnLogin"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_alignEnd="@+id/password" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/lName"
-        android:hint="Last Name"
-        android:background="#999999"
-        android:layout_below="@+id/fName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:text=""
         android:ems="10"
         android:id="@+id/email"
         android:hint="Email"
-        android:background="#999999"
-        android:layout_below="@+id/lName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"/>
+        android:background="#969696"
+        android:layout_marginTop="37dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/bnRegisterPage"
+        android:layout_alignStart="@+id/bnRegisterPage"
+        android:layout_alignRight="@+id/bnRegisterPage"
+        android:layout_alignEnd="@+id/bnRegisterPage" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:ems="10"
+        android:layout_marginTop="22dp"
         android:id="@+id/password"
         android:hint="Password"
-        android:background="#999999"
+        android:background="#969696"
         android:layout_below="@+id/email"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
-
-    <Button
-        android:text="Submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:id="@+id/bRegisterSubmit"
-        android:layout_above="@+id/password"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Driver Registration"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/bRegisterSubmit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
-
-
+        android:layout_alignLeft="@+id/email"
+        android:layout_alignStart="@+id/email"
+        android:layout_alignRight="@+id/email"
+        android:layout_alignEnd="@+id/email" />
 </RelativeLayout>

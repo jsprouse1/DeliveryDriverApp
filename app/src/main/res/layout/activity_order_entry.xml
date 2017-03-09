@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_order_entry"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.driver.jp.driverapp1.OrderEntry"
+    android:background="#232323">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/enAddress"
+        android:hint="123 Apple Street"
+        android:background="#999999"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="46dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textColor="@android:color/darker_gray"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:layout_marginTop="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:background="#999999"
+        android:layout_marginTop="36dp"
+        android:id="@+id/enOrderTip"
+        android:text="$XX.xx"
+        android:textAlignment="center"
+        android:layout_below="@+id/enOrderTotal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:background="#999999"
+        android:layout_marginTop="34dp"
+        android:id="@+id/enOrderTotal"
+        android:text="$XX.xx"
+        android:textAlignment="center"
+        android:layout_below="@+id/enAddress"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioPaymentType"
+        android:layout_below="@+id/enOrderTip"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioCash"
+            android:checked="false"
+            android:text="Cash"
+            android:textColor="@android:color/darker_gray"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit"
+            android:id="@+id/radioCredit"
+            android:layout_marginTop="5dp"
+            android:checked="false"
+            android:textColor="@android:color/darker_gray"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PayPal"
+            android:id="@+id/radioPayPal"
+            android:layout_marginTop="5dp"
+            android:checked="false"
+            android:textColor="@android:color/darker_gray"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split"
+            android:id="@+id/radioSplit"
+            android:layout_marginTop="5dp"
+            android:checked="false"
+            android:textColor="@android:color/darker_gray"/>
+    </RadioGroup>
+
+    <CheckBox
+        android:text="Late"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox4"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignTop="@+id/radioPaymentType"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:text="Priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxPriority"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/checkBox4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lbOrderTip"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/enOrderTotal"
+        android:layout_alignLeft="@+id/enOrderTip"
+        android:layout_alignStart="@+id/enOrderTip"
+        android:layout_marginTop="20dp" />
+
+    <CheckBox
+        android:text="Pre-Tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxPreTip"
+        android:textColor="@android:color/darker_gray"
+        android:layout_alignBaseline="@+id/enOrderTip"
+        android:layout_alignBottom="@+id/enOrderTip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/enOrderTip"
+        android:layout_toStartOf="@+id/enOrderTip" />
+
+    <TextView
+        android:text="Order Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lbOrderTotal"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:layout_below="@+id/enAddress"
+        android:layout_alignLeft="@+id/enOrderTotal"
+        android:layout_alignStart="@+id/enOrderTotal"
+        android:layout_marginTop="18dp" />
+
+</RelativeLayout>
